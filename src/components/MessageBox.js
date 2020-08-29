@@ -7,7 +7,9 @@ export default function MessageBox({messages}){
     })
   return (
     <div className="chats">
-      {messages.map((m) => (
+      {messages
+      .sort((a,b) => a.date.getTime() - b.date.getTime())
+      .map((m) => (
         <Message message ={m} key = {m.id} />   
       ))}
     <div style ={{float: 'right', clear: 'both'}} ref = {endDiv}> </div>
