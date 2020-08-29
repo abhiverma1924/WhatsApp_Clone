@@ -18,4 +18,5 @@ Whatsapp Web UI Clone User Interface made with React, React hooks and Faker for 
 6. Until we don't start typing microphone icon is shown on right, as soon we start typing it changes to send button.
 7. Messages are also sorted on the basis of date and time in contact list as well.
 
-
+# Deployed On Heroku 
+Link - https://whispering-island-82982.herokuapp.com/
