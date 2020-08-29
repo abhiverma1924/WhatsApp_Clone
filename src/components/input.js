@@ -5,7 +5,7 @@ import sendIcon from '../assets/send.svg'
 
 export default function InputBox({message, setMessage, Messenger}){
   function handleKeyDown(e){
-    if(e.key==='Enter'){
+    if(e.key==='Enter' && message){
       Messenger()
     }
   }

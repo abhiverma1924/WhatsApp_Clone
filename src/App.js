@@ -45,8 +45,8 @@ function App() {
                     <input type="text" placeholder="Search or start a new chat" />
                 </div>
                 <div className="contact-boxes">
-                  {data.map(({contact}) => (
-                    <Contact contact ={contact}  key = {contact.id} setContactSelected = {setContactSelected} />
+                  {data.map(({contact, messages}) => (
+                    <Contact contact ={contact}  key = {contact.id} setContactSelected = {setContactSelected} messages = {messages}/>
                   ))}
                 </div>
                        
