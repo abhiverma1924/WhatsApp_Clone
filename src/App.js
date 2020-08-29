@@ -1,79 +1,48 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import emojiIcon from './assets/tag_faces.svg'
 
 import doubleCheck from './assets/done_all.svg'
 
 import micIcon from './assets/mic.svg'
+import {mainUser, contactsMessages} from './Faker.js'
+import Avatar from './components/profile'
+import Contact from './components/contact'
+import MessageBox from './components/MessageBox'
+
 
 import './App.css'
 
 function App() {
+    const[data, setData] = useState(contactsMessages)
+    const[contactSelected,setContactSelected ] = useState({})
+    const[currentMessages, setCurrentMessage] = useState([])
+
+    useEffect(() =>{
+      const currContact = data.find( d => d.contact.id === contactSelected.id)
+      setCurrentMessage((currContact && currContact.messages || []))
+    },[contactSelected, data] )
     return (
         <div className="app">
             <aside>
                 <header>
-                    <div className="avatar-component">
-                        <img
-                            className="avatar"
-                            src="https://pbs.twimg.com/profile_images/501759258665299968/3799Ffxy.jpeg"
-                            alt=""
-                        />
-                    </div>
+                    <Avatar user={mainUser}/>
                 </header>
                 <div className="search">
                     <input type="text" placeholder="Search or start a new chat" />
                 </div>
                 <div className="contact-boxes">
-                    <div className="contact-box">
-                        <div className="avatar-component">
-                            <img
-                                className="avatar"
-                                src="https://pbs.twimg.com/profile_images/501759258665299968/3799Ffxy.jpeg"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="right-section">
-                            <div className="contact-box-header">
-                                <h3 className="avatar-title">Jessica</h3>
-                                <span className="time-mark">yesterday</span>
-                            </div>
-                            <div className="last-msg">
-                                <img src={doubleCheck} alt="" className="icon-small" />
-                                <span className="text">Lorem ipsum dolor</span>
-                            </div>
-                        </div>
-                    </div>
+                  {data.map(({contact}) => (
+                    <Contact contact ={contact}  key = {contact.id} setContactSelected = {setContactSelected} />
+                  ))}
                 </div>
+                       
             </aside>
             <main>
                 <header>
-                    <div className="avatar-component">
-                        <img
-                            className="avatar"
-                            src="https://pbs.twimg.com/profile_images/501759258665299968/3799Ffxy.jpeg"
-                            alt=""
-                        />
-
-                        <h3 className="avatar-title">Sofia</h3>
-                    </div>
+                   <Avatar user = {contactSelected} showName />
                 </header>
-                <div className="chats">
-                    <div className="message received">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur voluptatibus fuga illo.
-                        <div className="metadata">
-                            <span className="date">05/20/2020</span>
-                        </div>
-                    </div>
-                    <div className="message sent">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing.
-                        <div className="metadata">
-                            <span className="date">05/20/2020</span>
-                            <img src={doubleCheck} alt="" className="icon-small" />
-                        </div>
-                    </div>
-                </div>
+                <MessageBox messages = {currentMessages} />
                 <div className="chat-input-box">
                     <div className="icon emoji-selector">
                         <img src={emojiIcon} alt="" />
