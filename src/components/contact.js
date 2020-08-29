@@ -4,6 +4,10 @@ import Avatar from './profile'
 
 export default function Contact({contact,setContactSelected, messages}){ const maxDate = Math.max(...messages.map( m => m.date.getTime()))
   const lastmessage = messages.find((m) => m.date.getTime() === maxDate) 
+
+  function shortner(text, length){
+    return text.length ? `${text.substring(0,length)} ...` : text
+  }
   return (
       <div className="contact-boxes" onClick= { () => setContactSelected(contact)}>
         <div className="contact-box"> 
@@ -15,7 +19,7 @@ export default function Contact({contact,setContactSelected, messages}){ const m
                 </div>
                 <div className="last-msg">
                     <img src={doubleCheck} alt="" className="icon-small" />
-                    <span className="text">{lastmessage.msg}</span>
+                    <span className="text">{shortner(lastmessage.msg, 30)}</span>
                 </div>
             </div>
         </div>
