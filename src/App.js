@@ -33,6 +33,7 @@ function App() {
         },
       })
       setData(newData)
+      setMessage('')
     }
     return (
         <div className="app">
@@ -60,5 +61,4 @@ function App() {
         </div>
     )
 }
-
 export default App
