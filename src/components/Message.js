@@ -7,7 +7,7 @@ export default function Message({message}){
          {message.msg}
           <div className="metadata">
               <span className="date">{message.date.toLocaleString()}</span>
-              <img src={doubleCheck} alt="" className="icon-small" />
+              {message.isMainUser && <img src={doubleCheck} alt="" className="icon-small" />}
           </div>
       </div>
   )
