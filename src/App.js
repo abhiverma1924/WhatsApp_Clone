@@ -38,14 +38,12 @@ function App() {
     return (
         <div className="app">
             <aside>
-                <header>
-                // Main-user Profile Avatar component 
+                <header> 
                     <Avatar user={mainUser}/>
                 </header>
                 <div className="search">
                     <input type="text" placeholder="Search or start a new chat" />
                 </div>
-                 // Contact List of the user chatBox
                 <div className="contact-boxes">
                   {data.map(({contact, messages}) => (
                     <Contact contact ={contact}  key = {contact.id} setContactSelected = {setContactSelected} messages = {messages}/>
@@ -56,7 +54,7 @@ function App() {
                 <header>
                    <Avatar user = {contactSelected} showName />
                 </header>
-                 // Complete message box component of a particular contact
+                
                 <MessageBox messages = {currentMessages} />
               <InputBox  message = {message} setMessage = {setMessage} Messenger = {Messenger} />
             </main>
