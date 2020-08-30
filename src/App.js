@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
-import emojiIcon from './assets/tag_faces.svg'
-import doubleCheck from './assets/done_all.svg'
-import micIcon from './assets/mic.svg'
+import emojiIcon from './assets/emoji.svg'
+import doubleCheck from './assets/tick.svg'
+import micIcon from './assets/microphone.svg'
 
 import {mainUser, contactsMessages, Message} from './Faker.js'
 
@@ -39,22 +39,24 @@ function App() {
         <div className="app">
             <aside>
                 <header>
+                // Main-user Profile Avatar component 
                     <Avatar user={mainUser}/>
                 </header>
                 <div className="search">
                     <input type="text" placeholder="Search or start a new chat" />
                 </div>
+                 // Contact List of the user chatBox
                 <div className="contact-boxes">
                   {data.map(({contact, messages}) => (
                     <Contact contact ={contact}  key = {contact.id} setContactSelected = {setContactSelected} messages = {messages}/>
                   ))}
-                </div>
-                       
+                </div>    
             </aside>
             <main>
                 <header>
                    <Avatar user = {contactSelected} showName />
                 </header>
+                 // Complete message box component of a particular contact
                 <MessageBox messages = {currentMessages} />
               <InputBox  message = {message} setMessage = {setMessage} Messenger = {Messenger} />
             </main>

@@ -1,6 +1,6 @@
 import React from 'react'
-import micIcon from '../assets/mic.svg'
-import emojiIcon from '../assets/tag_faces.svg'
+import micIcon from '../assets/microphone.svg'
+import emojiIcon from '../assets/emoji.svg'
 import sendIcon from '../assets/send.svg'
 
 export default function InputBox({message, setMessage, Messenger}){

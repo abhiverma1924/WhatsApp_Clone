@@ -1,5 +1,5 @@
 import React from 'react'
-import doubleCheck from '../assets/done_all.svg'
+import doubleCheck from '../assets/tick.svg'
 
 export default function Message({message}){
   return (

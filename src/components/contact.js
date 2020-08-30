@@ -1,5 +1,5 @@
 import React from 'react'
-import doubleCheck from '../assets/done_all.svg'
+import doubleCheck from '../assets/tick.svg'
 import Avatar from './profile'
 
 export default function Contact({contact,setContactSelected, messages}){ const maxDate = Math.max(...messages.map( m => m.date.getTime()))
