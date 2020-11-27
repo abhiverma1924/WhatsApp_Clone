@@ -1,6 +1,8 @@
 # WhatsApp_Clone
 Whatsapp Web UI Clone User Interface made with React, React hooks and Faker for generating fake data.
 
+- With Jenkins
+
 # Main Components
 1. Create React App.
 2. Profile => Component depicts the randomly generted main user avatar, name.
