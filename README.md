@@ -1,6 +1,9 @@
 # WhatsApp_Clone
 Whatsapp Web UI Clone User Interface made with React, React hooks and Faker for generating fake data.
 
+![Application](sss.png)
+
+
 - With Jenkins
 
 # Main Components
