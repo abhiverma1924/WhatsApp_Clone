@@ -21,4 +21,4 @@ Whatsapp Web UI Clone User Interface made with React, React hooks and Faker for 
 # Deployed On Heroku 
 Link - https://whispering-island-82982.herokuapp.com/
 
-# Other Projects - https://github.com/abhiverma1924/Site https://github.com/abhiverma1924/Site
+# Other Projects - https://github.com/abhiverma1924/Site
